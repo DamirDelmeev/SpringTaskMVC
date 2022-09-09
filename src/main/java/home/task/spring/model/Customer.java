@@ -17,7 +17,7 @@ import java.util.List;
 @Builder
 @Table(name = "customer")
 @ApiModel(description = "Detail about customer.")
-public class Customer {
+public class Customer  {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,9 +26,9 @@ public class Customer {
     private String name;
     @ManyToMany(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.NO_ACTION)
-    @JoinTable(name = "customer_project"
-            , joinColumns = @JoinColumn(name = "customer_id")
-            , inverseJoinColumns = @JoinColumn(name = "project_id"))
-    @JsonIgnore
+    @JoinTable(name="customer_project"
+            ,joinColumns = @JoinColumn(name = "customer_id")
+            ,inverseJoinColumns = @JoinColumn(name = "project_id"))
+            @JsonIgnore
     List<Project> projectList;
 }
