@@ -40,11 +40,11 @@ public class EmployeeRepository {
         return resultList;
     }
 
-//    public List<Employee> getNameOfAll() {
+    public List<Employee> getNameOfAll() {
 //        Session session = sessionFactory.getObject().getCurrentSession();
 //        List<Employee> resultList = session.createQuery
 //                ("select Employee from Employee inner join Project on Employee .project=Project .id," +
 //                        "Employee .class").getResultList();
-//        return null;
-//    }
+        return null;
+    }
 }
