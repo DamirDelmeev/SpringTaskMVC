@@ -3,13 +3,10 @@ package home.task.spring.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import lombok.*;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 
 @Entity
-
 @Getter
 @Setter
 @AllArgsConstructor
@@ -18,7 +15,6 @@ import javax.persistence.*;
 @Table(name = "employee")
 @ApiModel(description = "Detail about employee.")
 public class Employee {
-
 
     @Id
     @Column(name = "id")

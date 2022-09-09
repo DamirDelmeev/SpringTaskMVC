@@ -42,5 +42,5 @@ public interface TaskService {
 
     List<Employee> getAllEmployeeDesc();
 
-     List<Employee> getNameOfAll () ;
+    List<Employee> getNameOfAll();
 }

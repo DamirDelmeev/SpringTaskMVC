@@ -2,8 +2,6 @@ package home.task.spring.model;
 
 import io.swagger.annotations.ApiModel;
 import lombok.*;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.util.List;

@@ -18,10 +18,12 @@ public class EmployeeController {
     public List<Employee> getAllEmployee() {
         return taskService.getAllEmployee();
     }
+
     @GetMapping("employees/desc")
     public List<Employee> getAllEmployeeDesc() {
         return taskService.getAllEmployeeDesc();
     }
+
     @GetMapping("employees/name")
     public List<Employee> getNameOfAll() {
         return taskService.getNameOfAll();

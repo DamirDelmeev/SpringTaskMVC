@@ -36,6 +36,7 @@ public class TaskServiceImpl implements TaskService {
     public Customer getCustomerById(Long id) {
         return customerRepository.getCustomerById(id);
     }
+
     @Transactional
     @Override
     public void addCustomer(Customer customer) {
@@ -119,14 +120,16 @@ public class TaskServiceImpl implements TaskService {
     public void deleteProject(Long id) {
         projectRepository.deleteProject(id);
     }
+
     @Transactional
     @Override
     public List<Employee> getAllEmployeeDesc() {
         return employeeRepository.getAllEmployeeDesc();
     }
+
     @Transactional
     @Override
-    public List<Employee> getNameOfAll () {
-        return employeeRepository.getNameOfAll();
+    public List<Employee> getNameOfAll() {
+        return employeeRepository.getNameOfAllSortedById();
     }
 }

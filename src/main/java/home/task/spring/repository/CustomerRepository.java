@@ -1,7 +1,6 @@
 package home.task.spring.repository;
 
 import home.task.spring.model.Customer;
-import home.task.spring.model.Employee;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
