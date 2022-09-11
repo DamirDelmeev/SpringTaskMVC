@@ -1,35 +1,35 @@
 package home.task.spring.controller;
 
 import home.task.spring.model.Project;
-import home.task.spring.services.TaskService;
+import home.task.spring.services.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController()
-@RequestMapping()
+@RequestMapping("/")
 public class ProjectController {
     @Autowired
-    TaskService taskService;
+    private ProjectService projectService;
 
     @GetMapping("projects")
     public List<Project> getAllProject() {
-        return taskService.getAllProject();
+        return projectService.getAllProject();
     }
 
     @GetMapping("project/{id}")
     public Project getProjectById(@PathVariable Long id) {
-        return taskService.getProjectById(id);
+        return projectService.getProjectById(id);
     }
 
     @PostMapping("project")
     public void addProject(@RequestBody Project project) {
-        taskService.addProject(project);
+        projectService.addProject(project);
     }
 
     @DeleteMapping("project/{id}")
     public void deleteProject(@PathVariable Long id) {
-        taskService.deleteProject(id);
+        projectService.deleteProject(id);
     }
 }

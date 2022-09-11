@@ -1,7 +1,7 @@
 package home.task.spring.controller;
 
 import home.task.spring.model.Position;
-import home.task.spring.services.TaskService;
+import home.task.spring.services.PositionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,28 +9,28 @@ import java.util.List;
 
 
 @RestController()
-@RequestMapping()
+@RequestMapping("/")
 public class PositionController {
     @Autowired
-    TaskService taskService;
+    private PositionService positionService;
 
     @GetMapping("positions")
     public List<Position> getAllPosition() {
-        return taskService.getAllPosition();
+        return positionService.getAllPosition();
     }
 
     @GetMapping("position/{id}")
     public Position getPositionById(@PathVariable Long id) {
-        return taskService.getPositionById(id);
+        return positionService.getPositionById(id);
     }
 
     @PostMapping("position")
     public void addPosition(@RequestBody Position position) {
-        taskService.addPosition(position);
+        positionService.addPosition(position);
     }
 
     @DeleteMapping("position/{id}")
     public void deletePosition(@PathVariable Long id) {
-        taskService.deletePosition(id);
+        positionService.deletePosition(id);
     }
 }

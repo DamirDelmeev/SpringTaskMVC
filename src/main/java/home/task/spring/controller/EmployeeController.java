@@ -1,7 +1,7 @@
 package home.task.spring.controller;
 
 import home.task.spring.model.Employee;
-import home.task.spring.services.TaskService;
+import home.task.spring.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,38 +9,38 @@ import java.util.List;
 
 
 @RestController()
-@RequestMapping()
+@RequestMapping("/")
 public class EmployeeController {
     @Autowired
-    TaskService taskService;
+    private EmployeeService employeeService;
 
     @GetMapping("employees")
     public List<Employee> getAllEmployee() {
-        return taskService.getAllEmployee();
+        return employeeService.getAllEmployee();
     }
 
     @GetMapping("employees/desc")
     public List<Employee> getAllEmployeeDesc() {
-        return taskService.getAllEmployeeDesc();
+        return employeeService.getAllEmployeeDesc();
     }
 
     @GetMapping("employees/name")
     public List<Employee> getNameOfAll() {
-        return taskService.getNameOfAll();
+        return employeeService.getNameOfAll();
     }
 
     @GetMapping("employee/{id}")
     public Employee getEmployeeById(@PathVariable Long id) {
-        return taskService.getEmployeeById(id);
+        return employeeService.getEmployeeById(id);
     }
 
     @PostMapping("employee")
     public void addEmployee(@RequestBody Employee employee) {
-        taskService.addEmployee(employee);
+        employeeService.addEmployee(employee);
     }
 
     @DeleteMapping("employee/{id}")
     public void deleteEmployee(@PathVariable Long id) {
-        taskService.deleteEmployee(id);
+        employeeService.deleteEmployee(id);
     }
 }
